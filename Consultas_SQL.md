@@ -4,21 +4,22 @@
 
 ```bash
 -- Listar todos os pacientes atendidos por cada médico
-SELECT Médicos.Nome AS Medico, Pacientes.Nome AS Paciente
+SELECT Médicos.Nome AS Médico, Pacientes.Nome AS Paciente
 FROM Consultas
 JOIN Médicos ON Consultas.MédicoID = Médicos.ID
 JOIN Pacientes ON Consultas.PacienteID = Pacientes.ID;
 
 -- Listar as consultas realizadas num determinado período
-SELECT * FROM Consultas
-WHERE DataConsulta BETWEEN '2023-09-01' AND '2023-09-30';
+SELECT *
+FROM Consultas
+WHERE DataConsulta BETWEEN '2023-07-01' AND '2023-08-31';
 
 -- Listar os pacientes com mais de um determinado número de consultas
-SELECT Pacientes.Nome, COUNT(Consultas.ID) AS NumeroDeConsultas
-FROM Pacientes
-JOIN Consultas ON Pacientes.ID = Consultas.PacienteID
+SELECT Pacientes.Nome, COUNT(Consultas.ID) AS NumConsultas
+FROM Consultas
+JOIN Pacientes ON Consultas.PacienteID = Pacientes.ID
 GROUP BY Pacientes.Nome
-HAVING NumeroDeConsultas > 1;
+HAVING NumConsultas > 1;
 
 -- Listar os tratamentos disponíveis
 SELECT * FROM Tratamentos;
