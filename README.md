@@ -10,7 +10,7 @@ Este projeto consiste na criação de um sistema de gestão para uma clínica m�
 
 ## Estrutura do Projeto
 
-    Diagrama ER da Base de Dados
+    Diagrama ER da Database
         Um diagrama ER foi criado para visualizar as entidades e os relacionamentos entre elas.
 
     Criação das Tabelas
@@ -31,7 +31,7 @@ Este projeto consiste na criação de um sistema de gestão para uma clínica m�
     Cursores
         Cursores para gerar relatórios detalhados.
 
-## Diagrama ER da Base de Dados
+## Diagrama ER da DataBase
 ![Captura de ecrã de 2024-07-16 13-46-49](https://github.com/user-attachments/assets/e5d23103-f746-4e23-91cc-b4a84141b1a0)
 
 O diagrama ER foi criado utilizando MySQL Workbench e ilustra as seguintes entidades:
