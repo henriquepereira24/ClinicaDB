@@ -6,16 +6,12 @@
 -- Registrar uma Nova Consulta
 DELIMITER //
 
-CREATE PROCEDURE RegistrarConsulta(
-    IN pPacienteID INT,
-    IN pMedicoID INT,
-    IN pDataConsulta DATETIME,
-    IN pDiagnostico VARCHAR(255)
-)
+CREATE PROCEDURE RegistrarConsulta(IN pPacienteID INT, IN pMédicoID INT, IN pDataConsulta DATETIME, IN pDiagnóstico TEXT)
 BEGIN
     INSERT INTO Consultas (PacienteID, MédicoID, DataConsulta, Diagnóstico)
-    VALUES (pPacienteID, pMedicoID, pDataConsulta, pDiagnostico);
+    VALUES (pPacienteID, pMédicoID, pDataConsulta, pDiagnóstico);
 END;
+
 //
 
 DELIMITER ;
@@ -23,17 +19,13 @@ DELIMITER ;
 -- Atualizar os Dados de um Paciente
 DELIMITER //
 
-CREATE PROCEDURE AtualizarPaciente(
-    IN pPacienteID INT,
-    IN pNome VARCHAR(255),
-    IN pDataNascimento DATE,
-    IN pTelefone VARCHAR(15)
-)
+CREATE PROCEDURE AtualizarPaciente(IN pID INT, IN pNome VARCHAR(100), IN pDataNascimento DATE, IN pTelefone VARCHAR(15))
 BEGIN
     UPDATE Pacientes
     SET Nome = pNome, DataNascimento = pDataNascimento, Telefone = pTelefone
-    WHERE ID = pPacienteID;
+    WHERE ID = pID;
 END;
+
 //
 
 DELIMITER ;
@@ -41,17 +33,13 @@ DELIMITER ;
 -- Calcular o Total de Consultas Realizadas num Determinado Período
 DELIMITER //
 
-CREATE PROCEDURE TotalConsultas(
-    IN pInicio DATE,
-    IN pFim DATE,
-    OUT pTotal INT
-)
+CREATE PROCEDURE TotalConsultas(IN pInicio DATE, IN pFim DATE, OUT pTotal INT)
 BEGIN
-    SELECT COUNT(*)
-    INTO pTotal
+    SELECT COUNT(*) INTO pTotal
     FROM Consultas
     WHERE DataConsulta BETWEEN pInicio AND pFim;
 END;
+
 //
 
 DELIMITER ;
