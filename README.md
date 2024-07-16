@@ -41,3 +41,22 @@ O diagrama ER foi criado utilizando MySQL Workbench e ilustra as seguintes entid
     Tratamentos (ID, Nome, Descrição, Preço)
     Prescrições (ID, ConsultaID, TratamentoID, Quantidade, Preço)
 
+## Instruções para Configuração e Utilização
+
+### Configurar a Base de Dados
+
+Execute os scripts SQL para criar o banco de dados e as tabelas.
+
+Insira dados de exemplo utilizando os scripts fornecidos.
+
+### Executar Consultas SQL
+
+Utilize as consultas SQL para extrair informações conforme necessário.
+
+### Triggers e Stored Procedures
+
+Implemente os triggers e stored procedures para automatizar tarefas e garantir a integridade dos dados.
+
+### Gerar Relatórios com Cursores
+
+Utilize os cursores para gerar relatórios detalhados conforme as necessidades da clínica.
