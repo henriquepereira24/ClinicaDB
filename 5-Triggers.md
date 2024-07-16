@@ -9,16 +9,16 @@ CREATE TRIGGER AtualizarHistoricoConsultas
 AFTER INSERT ON Consultas
 FOR EACH ROW
 BEGIN
-    -- Placeholder para ações após inserção de uma consulta.
+    -- Código para atualizar histórico
 END;
 //
 
 DELIMITER ;
 
--- Trigger para Impedir a Inserção de uma Consulta se o Médico Não Estiver Disponível
 DELIMITER //
 
-CREATE TRIGGER VerificarDisponibilidadeMedico
+-- Impedir a inserção de uma consulta se o médico não estiver disponível
+CREATE TRIGGER VerificarDisponibilidadeMedico 
 BEFORE INSERT ON Consultas
 FOR EACH ROW
 BEGIN
@@ -31,6 +31,7 @@ BEGIN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Médico não disponível nesta data e hora';
     END IF;
 END;
+
 //
 
 DELIMITER ;
