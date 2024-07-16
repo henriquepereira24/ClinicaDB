@@ -42,22 +42,59 @@ O diagrama ER foi criado utilizando MySQL Workbench e ilustra as seguintes entid
     Tratamentos (ID, Nome, Descrição, Preço)
     Prescrições (ID, ConsultaID, TratamentoID, Quantidade, Preço)
 
-## Instruções para Configuração e Utilização
+# Instruções para Configuração e Utilização do Sistema de Gestão de Clínica
+### 1. Configurar a Base de Dados
+#### 1.1 Instalar o MySQL
 
-### Configurar a Base de Dados
+Se ainda não tiver o MySQL instalado, siga estas etapas:
 
-Execute os scripts SQL para criar o banco de dados e as tabelas.
+#### Windows:
+1. Instale o MySQL Installer do site oficial: https://dev.mysql.com/downloads/workbench/.
+2. Execute o instalador e siga as instruções na tela para instalar o MySQL Server e MySQL Workbench.
 
-Insira dados de exemplo utilizando os scripts fornecidos.
+#### Linux:
+Atualize seu repositório de pacotes:
+Instale o MySQL Server:
+```bash
+sudo apt update
+```
+Instale o MySQL Server:
+```bash
+sudo apt install mysql-server
+```
+Inicie o serviço MySQL:
+```bash
+sudo service mysql start
+```
 
-### Executar Consultas SQL
+#### 1.2 Criar a Base de Dados e Tabelas
 
-Utilize as consultas SQL para extrair informações conforme necessário.
+1. Abra o MySQL Workbench (ou outro cliente de sua preferência) e conecte-se ao seu servidor MySQL.
+2. Crie a base de dados e as tabelas necessárias executando os scripts.
 
-### Triggers e Stored Procedures
+#### 1.3 Inserir Dados de Exemplo
 
-Implemente os triggers e stored procedures para automatizar tarefas e garantir a integridade dos dados.
+Execute o script a seguir para inserir dados de exemplo nas tabelas criadas.
 
-### Gerar Relatórios com Cursores
+### 2. Executar Consultas SQL
 
-Utilize os cursores para gerar relatórios detalhados conforme as necessidades da clínica.
+Para extrair informações da base de dados, execute as consultas SQL.
+
+### 3. Implementar Triggers e Stored Procedures
+#### 3.1 Criar Triggers
+
+Para criar os triggers, execute o script.
+
+#### 3.2 Criar Stored Procedures
+
+Para criar as stored procedures, execute o script.
+
+### 4. Gerar Relatórios com Cursores
+
+Para criar um relatório detalhado utilizando cursores, execute o script.
+
+### 5. Testar o Sistema
+
+Após configurar a database e implementar todos os componentes,podes testar o sistema executando as stored procedures e triggers criadas.
+
+
