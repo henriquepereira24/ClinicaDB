@@ -1,4 +1,4 @@
-# 1.Testar Consultas
+# 1. Testar Consultas
 
 ```bash
 -- Listar todos os pacientes atendidos por cada médico
@@ -22,7 +22,7 @@ HAVING NumConsultas > 1;
 -- Listar os tratamentos disponíveis
 SELECT * FROM Tratamentos;
 ```
-# 2.Testar Triggers
+# 2. Testar Triggers
 Para testar o trigger AtualizarHistoricoConsultas:
 
 ```bash
@@ -38,7 +38,7 @@ Para testar o trigger VerificarDisponibilidadeMedico, tente inserir uma consulta
 INSERT INTO Consultas (PacienteID, MédicoID, DataConsulta, Diagnóstico)
 VALUES (2, 1, '2023-09-01 10:00:00', 'Alergia');
 ```
-# 3.Testar Stored Procedures
+# 3. Testar Stored Procedures
 
 Para testar a stored procedure RegistrarConsulta:
 ```bash
@@ -61,11 +61,24 @@ Para testar a stored procedure TotalConsultas:
 CALL TotalConsultas('2023-07-01', '2023-09-30', @total);
 SELECT @total AS TotalConsultas;
 ```
-# 4.Testar Cursores
+# 4. Testar Cursores
 
-Para testar a stored procedure RelatorioPacientesConsultas:
+Para testar RelatorioPacientesConsultas:
 
 ```bash
 CALL RelatorioPacientesConsultas('2023-07-01', '2023-08-31');
 ```
+# Resultado Esperado
 
+Se tudo estiver funcionando corretamente, vais ter:
+
+    Listas de pacientes atendidos por cada médico.
+    Consultas realizadas no período especificado.
+    Pacientes com mais de um determinado número de consultas.
+    Lista de tratamentos disponíveis.
+    Histórico de consultas atualizado após a inserção de uma nova consulta.
+    Erro ao tentar inserir uma consulta com um médico não disponível.
+    Novas consultas registradas, dados de pacientes atualizados e total de consultas calculado corretamente.
+    Relatório de pacientes e suas consultas gerado.
+
+Essa abordagem garante que cada funcionalidade do sistema está funcionando conforme o esperado.
