@@ -2,7 +2,7 @@
 ## Triggers são usados para automatizar tarefas e garantir a integridade dos dados:
 
 ```bash
--- Trigger para Atualizar o Histórico de Consultas do Paciente Após a Inserção de uma Nova Consulta
+-- 1. Trigger para Atualizar o Histórico de Consultas do Paciente Após a Inserção de uma Nova Consulta
 DELIMITER //
 
 CREATE TRIGGER AtualizarHistoricoConsultas
@@ -17,7 +17,7 @@ DELIMITER ;
 
 DELIMITER //
 
--- Impedir a inserção de uma consulta se o médico não estiver disponível
+-- 2. Impedir a inserção de uma consulta se o médico não estiver disponível
 CREATE TRIGGER VerificarDisponibilidadeMedico 
 BEFORE INSERT ON Consultas
 FOR EACH ROW
@@ -38,6 +38,6 @@ DELIMITER ;
 ```
 ## Explicação:
 
-AtualizarHistoricoConsultas é um placeholder que pode ser usado para ações após a inserção de uma nova consulta.
-  
-VerificarDisponibilidadeMedico impede a inserção de uma consulta se o médico não estiver disponível na data e hora especificadas.
+1.Este trigger é acionado após a inserção de uma nova consulta na tabela Consultas. Ele insere um registro correspondente na tabela, registrando o ID do paciente, o ID da consulta e a data da consulta.
+
+2.Este trigger é acionado antes da inserção de uma nova consulta na tabela Consultas. Ele verifica se o médico já tem uma consulta marcada para a mesma data e hora. Se o médico não estiver disponível, um erro é gerado e a inserção é impedida.
