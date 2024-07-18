@@ -12,7 +12,7 @@ CREATE TABLE Pacientes (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(255) NOT NULL,
     DataNascimento DATE NOT NULL,
-    Telefone VARCHAR(15)
+    Telefone VARCHAR(9)
 );
 
 -- Criação da tabela Médicos e dos seus campos
