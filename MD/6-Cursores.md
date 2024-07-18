@@ -38,9 +38,3 @@ DELIMITER ;
 ## Explicação:
 Esta stored procedure utiliza um cursor para gerar um relatório que lista todos os pacientes e as suas consultas num determinado período. Ela recebe como parâmetros a data de início e a data de fim do período. O cursor percorre os resultados da consulta que busca pacientes e suas consultas dentro do período especificado, permitindo processar cada linha individualmente.
 
-
-
-//
-
-DELIMITER ;
-```
