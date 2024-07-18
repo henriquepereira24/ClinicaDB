@@ -53,10 +53,3 @@ CREATE TABLE Prescrições (
 );
 ```
 
-# Explicação:
-
-CREATE DATABASE ClinicaDB; cria a base de dados.
-
-USE ClinicaDB; seleciona a base de dados para utilização.
-
-CREATE TABLE define a estrutura das tabelas Pacientes, Médicos, Consultas, Tratamentos e Prescrições.
